@@ -8,12 +8,21 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic URL validation
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    if (!urlPattern.test(originalUrl)) {
+      setError("Please enter a valid URL.");
+      return;
+    }
+
     try {
-      const response = await axios.post("https://urlshortnerbackend-a2xi.onrender.com", {
+      // Make POST request to backend for shortening the URL
+      const response = await axios.post("https://urlshortnerbackend-a2xi.onrender.com/shorten", {
         originalUrl,
       });
-      setShortUrl(response.data.shortUrl);
-      setError("");
+      setShortUrl(response.data.shortUrl);  // Set shortened URL
+      setError("");  // Clear error if successful
     } catch (err) {
       setError("An error occurred while shortening the URL");
     }
