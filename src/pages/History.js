@@ -7,7 +7,7 @@ const History = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/history");
+        const response = await axios.get("https://urlshortnerbackend-a2xi.onrender.com");
         setHistory(response.data);
       } catch (err) {
         console.log("Error fetching history:", err);
