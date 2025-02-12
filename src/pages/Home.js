@@ -21,7 +21,8 @@ const Home = () => {
       const response = await axios.post("https://urlshortnerbackend-a2xi.onrender.com/shorten", {
         originalUrl,
       });
-      setShortUrl(response.data.shortUrl);  // Set shortened URL
+      /* setShortUrl(response.data.shortUrl);  // Set shortened URL */
+      setShortUrl(`https://urlshortnerbackend-a2xi.onrender.com/${response.data.shortUrl}`);
       setError("");  // Clear error if successful
     } catch (err) {
       setError("An error occurred while shortening the URL");
