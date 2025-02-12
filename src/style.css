@@ -1,0 +1,21 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .navbar {
+    border-bottom: 2px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  table td {
+    text-align: center;
+  }
+  
+  .alert {
+    text-align: center;
+  }
+  
